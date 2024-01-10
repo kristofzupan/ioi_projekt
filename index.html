@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt II</title>
+    <script type="module" src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tone"></script>
+    <style>
+
+        input {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            box-sizing: border-box;
+            outline: none;
+            border: 1px solid #ccc;
+            border-radius: 0; /* Reset border-radius */
+            padding: 5px; /* Add padding for better visual */
+        }
+
+        #octave {
+            border-radius: 10px
+        }
+
+        button {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            box-sizing: border-box;
+            outline: none;
+            border: 1px solid #ccc;
+            border-radius: 0; /* Reset border-radius */
+            cursor: pointer;
+        }
+
+        /* Add your custom styles */
+        #webcamButton {
+            border-radius: 6px;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body style="text-align: center; font-family: Arial">
+    <h2>Igranje tonov z dvigovanjem rok nad rame glede na barvo majice.</h2>
+    <div  style="text-align: center; margin: auto; display: flex; flex-direction: column; align-items: center;">
+        <div style="display: flex">
+            <button style="margin-right: 20px; border-radius: 6px;"id="calibrateButton" disabled>
+                <span></span>
+                <span>KALIBRACIJA</span>
+            </button>
+            <form>
+                <label for="octave">Oktava:</label>
+                <input type="number" id="octave" value=4>
+            </form>
+            <button style="margin-left: 20px"id="webcamButton">
+                <span></span>
+                <span>VKLOPI KAMERO</span>
+            </button>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <div style="position: relative; display: inline-block;">
+            <video hidden id="webcam" style="width: 1280px; height: 720px; position: absolute;" autoplay playsinline></video>
+            <canvas class="output_canvas" id="output_canvas" width="1280" height="720" style="border-radius: 20px"></canvas>
+        </div>
+    </div>
+</body>
+</html>
